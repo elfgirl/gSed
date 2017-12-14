@@ -6,7 +6,7 @@ gSed
 Stream Usage
 ------------
 
-| In keeping with the unix philiosphy of small tooks chained together to produce big results, and its namesake `sed`. gSed accepts STDIN/STDOUT redirecting
+| In keeping with the unix philiosphy of small tools chained together to produce big results, and its namesake `sed`. gSed accepts STDIN/STDOUT redirecting
 
 ::
 
