@@ -1,0 +1,28 @@
+gSed
+====
+
+| A project inspired the 'Jailbreak the Patriarchy' Chrome extension that switches gendered nouns inside the browser's HTML page. gSed is an attempt to exapand on that idea to any text medium such as ebooks, documetns, and text files.
+
+Stream Usage
+------------
+
+| In keeping with the unix philiosphy of small tooks chained together to produce big results, and its namesake `sed`. gSed accepts STDIN/STDOUT redirecting
+
+::
+
+    cat TheColorsOfSpace.txt | gSed > TheColorsOfSpace.swapped.txt
+
+
+File Usage
+----------
+
+
+
+Build
+-----
+
+| Building utilizes a docker python image to keep things as clean as possible
+
+::
+    
+    docker build -t cross-compile .

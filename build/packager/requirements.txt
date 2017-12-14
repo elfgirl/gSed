@@ -1,0 +1,6 @@
+wheel
+celery
+requests
+pymongo
+redis
+
