@@ -12,8 +12,8 @@ RUN mkdir -p /build
 WORKDIR /build
 
 # Copy files
-COPY ./entrypoint.sh /
-RUN chmod a+x /entrypoint.sh
+COPY ./builder.sh /
+RUN chmod a+x /builder.sh
 
 # Start building process
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/builder.sh"]

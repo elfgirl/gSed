@@ -1,5 +1,7 @@
-import wordSplitter
 import json
+
+import wordSplitter
+
 
 class gSwap:
     def __init__(self):

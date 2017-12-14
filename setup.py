@@ -7,17 +7,17 @@ setup(
     name='gSed',
     version='0.1',
     packages=find_packages(),
-    url='',
+    url='https://github.com/elfgirl/gSed',
     license='Apache Software License',
     author='Adrianne Mulvaney',
     author_email='amulvaney@gmail.com',
     description='Gender text stream editor',
 
-    package_data= {'': ['data/*.xml', 'data/*.json', 'doc/*.rst', 'doc/*.txt', 'lib/*.py']},
+    package_data= {'': ['data/*.xml', 'data/*.json', 'doc/*.rst', 'doc/*.txt', '*.py']},
 
     include_package_data=True,
 
-    scripts=['scripts/gSed.py'],
+    scripts=['scripts/gSed'],
 
     keywords='Gender',
 
