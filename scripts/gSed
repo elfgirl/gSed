@@ -68,7 +68,7 @@ def scan(input_name, output_name, results, context):
 
     if results:
         with open(results, 'a') as results_file:
-            results_file.write(surgeon.swaps_perfomed())
+            results_file.write(surgeon.swaps_performed())
     if context:
         with open(context, 'a') as context_file:
             context_file.write(surgeon.contexts_performed())

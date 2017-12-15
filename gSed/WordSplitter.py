@@ -3,9 +3,9 @@ import re
 import wordMaps
 
 
-class wordSplitter:
+class WordSplitter:
     def __init__(self):
-        self.mapper = wordMaps.wordmaps()
+        self.mapper = wordMaps.WordMaps()
         self.swaps = {}
         self.contexts = {}
 
@@ -32,5 +32,4 @@ class wordSplitter:
 
         if last_end_position != len(text_block):
             new_text_block.append(text_block[last_end_position:])
-
-        return "".join(new_text_block),
+        return "".join(new_text_block)

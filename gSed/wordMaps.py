@@ -1,6 +1,7 @@
 import re
 
-class wordmaps:
+
+class WordMaps:
     words = {}
     maps = {}
 
