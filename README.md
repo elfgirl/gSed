@@ -50,7 +50,7 @@ Docker is required to build as we do the wheel building inside a container for c
 
 ```
 cd gSed/build
-.\build_python_packages.sh
+./build_python_packages.sh
 ```
 
 
