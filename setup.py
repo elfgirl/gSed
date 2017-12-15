@@ -5,7 +5,7 @@ files = ["gSed/*"]
 
 setup(
     name='gSed',
-    version='0.1',
+    version='0.5.0',
     packages=find_packages(),
     url='https://github.com/elfgirl/gSed',
     license='Apache Software License',
