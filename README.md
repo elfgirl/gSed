@@ -13,13 +13,13 @@ In keeping with the unix philiosphy of small tools chained together to produce b
 cat TheColorsOfSpace.txt | gSed > TheColorsOfSpace.swapped.txt
 ```
 
-File based re-writing is also possible
+File based re-writing is also possible. The following will produce an output of TheColorsOfSpace.gswap.txt
 
 ```
 gSed -i TheColorsOfSpace.txt
 ```
 
-This will produce an output of TheColorsOfSpace.gswap.txt
+Sometimes, especially during debugging a text or just looking, one wants to see what words were swapped for appropriateness or the sentace context in which they were swapped. The following allows that data to be dumped to file. 
 
 ```
 gSed -i TheColorsOfSpace.txt -o TheColorsOfSpace.swapped.txt --context TCOS.contexts.json --swaps TCOS.swaps.json
@@ -34,7 +34,6 @@ This will produce three files as output.
 * `TCOS.contexts.json` : This is a json blob of all lines that had substitutions, and what words were substituted. Academically interesting and useful for debugging
 
 
-
 ### Installation
 
 Use pip to install from a PyPi repository or from a local wheel file  
@@ -43,6 +42,7 @@ pip install gSed
 or
 pip install gSed-0.5.0-py2-none-any.whl
 ```
+
 
 ### Building
 
@@ -58,6 +58,7 @@ cd gSed/build
 
 No special instructions for deplpyment other than `pip install gSed`
 
+
 ## Built With
 
 * [Docker](https://www.docker.com/) - Python Docker container used to compile wheels
@@ -67,17 +68,21 @@ No special instructions for deplpyment other than `pip install gSed`
 
 Please read [CONTRIBUTING](https://github.com/elfgirl/gSed/CONTRIBUTING) for details on our code of conduct, and the process for submitting pull requests to us.
 
+
 ## Versioning
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/elfgirl/gSed/tags).
+
 
 ## Authors
 
 * **Adrianne Mulvaney** - *Initial work* - [Adrianne](https://github.com/elfgirl)
 
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+
 
 ## Acknowledgments
 
