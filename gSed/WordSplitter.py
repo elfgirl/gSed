@@ -6,16 +6,17 @@ import wordMaps
 class WordSplitter:
     def __init__(self):
         self.mapper = wordMaps.WordMaps()
+        self.word_breaker = re.compile(r"([^\W\d](\w|(?=\w))*)", re.MULTILINE)
         self.swaps = {}
         self.contexts = {}
 
     # words = re.compile(r"([^\W\d](\w|[-']{1,2}(?=\w))*)", re.MULTILINE)
     def swap(self, text_block=""):
-        word_breaker = re.compile(r"([^\W\d](\w|(?=\w))*)", re.MULTILINE)
+
         new_text_block = []
         last_end_position = 0
 
-        for match in word_breaker.finditer(text_block):
+        for match in self.word_breaker.finditer(text_block):
             word_span = match.span()
             if word_span[0] != last_end_position:
                 new_text_block.append(text_block[last_end_position:word_span[0]])
