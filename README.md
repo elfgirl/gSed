@@ -7,8 +7,6 @@ A project inspired the 'Jailbreak the Patriarchy' Chrome extension that switches
 ## Getting Started
 
 ### Usage
-feff 
-
 
 In keeping with the unix philosophy of small tools chained together to produce big results, and its namesake `sed`. gSed accepts STDIN/STDOUT redirection
 
@@ -35,6 +33,19 @@ This will produce three files as output.
 * `TCOS.swaps.json` : This is a json blob of what words were substituted. Academically interesting but not required for usage.
 
 * `TCOS.contexts.json` : This is a json blob of all lines that had substitutions, and what words were substituted. Academically interesting and useful for debugging
+
+
+### Example Output
+
+`Pride & Prejudice (Jane Austen)`
+
+The original text 
+
+> It is a truth universally acknowledged, that a single man in possession of a good fortune must be in want of a wife. However little known the feelings or views of such a man may be on his first entering a neighbourhood, this truth is so well fixed in the minds of the surrounding families, that he is considered as the rightful property of some one or other of their daughters.",
+
+becomes
+
+> It is a truth universally acknowledged, that a single woman in possession of a good fortune must be in want of a husband. However little known the feelings or views of such a woman may be on her first entering a neighbourhood, this truth is so well fixed in the minds of the surrounding families, that she is considered as the rightful property of some one or other of their sons."),
 
 
 ### Installation
