@@ -1,13 +1,16 @@
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/gSed)
 
 # gSed
 
-A project inspired the 'Jailbreak the Patriarchy' Chrome extension that switches gendered nouns inside the browser's HTML page. gSed is an attempt to exapand on that idea to any text medium such as ebooks, documetns, and text files.
+A project inspired the 'Jailbreak the Patriarchy' Chrome extension that switches gendered nouns inside the browser's HTML page. gSed is an attempt to expand on that idea to any text medium such as e-books, documents, and text files.
 
 ## Getting Started
 
 ### Usage
+feff 
 
-In keeping with the unix philiosphy of small tools chained together to produce big results, and its namesake `sed`. gSed accepts STDIN/STDOUT redirection
+
+In keeping with the unix philosophy of small tools chained together to produce big results, and its namesake `sed`. gSed accepts STDIN/STDOUT redirection
 
 ```
 cat TheColorsOfSpace.txt | gSed > TheColorsOfSpace.swapped.txt
@@ -19,7 +22,7 @@ File based re-writing is also possible. The following will produce an output of 
 gSed -i TheColorsOfSpace.txt
 ```
 
-Sometimes, especially during debugging a text or just looking, one wants to see what words were swapped for appropriateness or the sentace context in which they were swapped. The following allows that data to be dumped to file. 
+Sometimes, especially during debugging a text or just looking, one wants to see what words were swapped for appropriateness or the sentence context in which they were swapped. The following allows that data to be dumped to file. 
 
 ```
 gSed -i TheColorsOfSpace.txt -o TheColorsOfSpace.swapped.txt --context TCOS.contexts.json --swaps TCOS.swaps.json
