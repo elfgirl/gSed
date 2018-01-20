@@ -2,7 +2,7 @@
 
 # gSed
 
-A project inspired the 'Jailbreak the Patriarchy' Chrome extension that switches gendered nouns inside the browser's HTML page. gSed is an attempt to expand on that idea to any text medium such as e-books, documents, and text files.
+A project inspired the 'Jailbreak the Patriarchy' Chrome extension which switches gendered nouns inside a browser's HTML page. gSed is an attempt to expand on that idea to any text medium such as e-books, documents, and text files.
 
 ## Getting Started
 
@@ -60,7 +60,7 @@ pip install gSed-0.5.0-py2-none-any.whl
 
 ### Building
 
-Docker is required to build as we do the wheel building inside a container for cross compiling and isolation. Everything requires is under the build directory. The gSed directory is mapped into the container as a source volume, and the gSed/output directory is mapped to a destination volume of the container.
+Docker is required to build as we do the wheel building inside a container for cross compiling and isolation. Everything required is under the build directory. The gSed directory is mapped into the container as a source volume, and the gSed/output directory is mapped to a destination volume of the container.
 
 ```
 cd gSed/build
