@@ -1,10 +1,5 @@
 import re
 
-
-class ContextException(Exception):
-    pass
-
-
 class WordMaps:
     words = {}
     special_contexts = {}
@@ -32,9 +27,9 @@ class WordMaps:
             self.words[key + 's'] = self.simple_plurals[key] + 'es'
             self.words[self.simple_plurals[key] + 'es'] = key + 's'
 
-        for key in self.special:
-            self.special_contexts[key] = self.special[key]
-            self.special_contexts[self.special[key]] = key
+        for key in self.other:
+            self.words[key] = self.other[key]
+            self.words[self.other[key]] = key
 
     def swap(self, input_word):
         # hyphenated words or punctuated like he'd or she'll are handled at WordSplitter level
@@ -42,43 +37,46 @@ class WordMaps:
         newWord = input_word
         wordMatch = input_word.lower()
 
-        if wordMatch in self.special_contexts :
-            raise ContextException
+        for match in self.special :
+            if wordMatch == match[0]:
+                newWord = match[1]
 
         try:
             foundWord = self.words[wordMatch]
             newWord = foundWord
         except:
-            return newWord
+            pass
 
         # TODO improve for all caps words
-        if input_word[0].isupper():
-            first = newWord[0]
-            rest = newWord[1:]
+        if input_word :
+            if input_word[0].isupper():
+                first = newWord[0]
+                rest = newWord[1:]
 
-            newWord = "{0}{1}".format(first.upper(), rest.lower())
+                newWord = "{0}{1}".format(first.upper(), rest.lower())
 
         return newWord
 
     # All dictionaries should be stored MtF
 
-    # TODO handle this
-    other = {
-        "radmasc": "radfem",
-        "patriar": "matriar",
-        "patroniz": "matroniz",
-        "misandr": "misogyn",
-        "misogyn": "misandr",
-        "masc": "fem"
-    }
+    # TODO handle this better as we should figure out his/him as replacements for her
+    special = [("him","her"), ("his","her"),("her","his"),("her","him")]
 
-    # TODO handle this
-    special = {
-        "cock": "hen",
-        "him": "her",
-        "his": "her",
-        "her": "his",
+    other = {
         "bro-whore": "sorostitute",
+        "masculinly": "femininely",
+        "masculine": "feminine",
+        "masculize": "feminize",
+        "masculise": "feminise",
+        "patriarchy": "matriarchy",
+        "patriarchal": "matriarchal",
+        "patricide": "matricide",
+        "patronize": "matronize",
+        "patronized": "matronized",
+        "patronizing": "matronizing",
+        "misandry": "misogyny",
+        "misandrist": "misogynist",
+        "masc": "fem",
     }
 
     complete = {

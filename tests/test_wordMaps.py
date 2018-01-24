@@ -6,7 +6,7 @@ class TestWordMaps(TestCase):
     def test_gendered_swap(self):
 
         mapper = WordMaps()
-        gendered_tuples = [("She", "He"), ("He", "She"), ("man", "woman"), ("airman","airwoman"),("airmen","airwomen"), ("billy-goat", "nanny-goat"), ("boyhood", "girlhood"),("boyhoods", "girlhoods")]
+        gendered_tuples = [("She", "He"), ("He", "She"), ("man", "woman"), ("airman","airwoman"),("airmen","airwomen"), ("boyhood", "girlhood"),("boyhoods", "girlhoods")]
         for tuple in gendered_tuples :
             answer = mapper.swap(tuple[0])
             self.assertEqual(tuple[1], answer)
