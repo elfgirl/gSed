@@ -21,12 +21,12 @@ class WordSplitter:
         for sentence_match in self.sentence_breaker.finditer(text_block):
             # Run through word based swaps first
 
-            new_sentance = []
+            new_sentence = []
             sentence_span = sentence_match.span()
             # Collect Punctuation and whitespace till next sentence
             if sentence_span[0] != sentence_end_position:
                 new_text_block.append(text_block[sentence_end_position:sentence_span[0]])
-                sentence_end_position = sentence_span[0]
+                # sentence_end_position = sentence_span[0]
             source_sentence = text_block[sentence_span[0]:sentence_span[1]]
 
             last_word_position = 0
@@ -37,21 +37,20 @@ class WordSplitter:
                     continue
                 # Collect Whitespace till next match
                 if word_span[0] != last_word_position:
-                    new_sentance.append(source_sentence[last_word_position:word_span[0]])
+                    new_sentence.append(source_sentence[last_word_position:word_span[0]])
                 source_word = source_sentence[word_span[0]:word_span[1]]
 
                 word = self.word_mapper.swap(source_word)
-                new_sentance.append(word)
+                new_sentence.append(word)
                 last_word_position = word_span[1]
 
                 if word != source_word:
                     self.swaps[source_word] = word
-                    if not source_sentence in self.contexts:
+                    if source_sentence not in self.contexts:
                         self.contexts[source_sentence] = []
                     self.contexts[source_sentence].append({'source': source_word, 'flip': word, })
 
-
-            new_text_block.append("".join(new_sentance))
+            new_text_block.append("".join(new_sentence))
             sentence_end_position = sentence_span[1]
 
         # Collect final punctuations

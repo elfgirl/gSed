@@ -15,7 +15,3 @@ class gSwap:
 
     def swaps_performed(self):
         return json.dumps(self.word_splitter.swaps, sort_keys=True, indent=4, default=str)
-
-    def repair(self):
-        # TODO repair common mistakes
-        pass

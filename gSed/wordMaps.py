@@ -1,5 +1,3 @@
-import re
-
 class WordMaps:
     words = {}
     special_contexts = {}
@@ -34,33 +32,32 @@ class WordMaps:
     def swap(self, input_word):
         # hyphenated words or punctuated like he'd or she'll are handled at WordSplitter level
 
-        newWord = input_word
-        wordMatch = input_word.lower()
+        new_word = input_word
+        word_match = input_word.lower()
 
-        for match in self.special :
-            if wordMatch == match[0]:
-                newWord = match[1]
+        for match in self.special:
+            if word_match == match[0]:
+                new_word = match[1]
 
         try:
-            foundWord = self.words[wordMatch]
-            newWord = foundWord
-        except:
+            found_word = self.words[word_match]
+            new_word = found_word
+        except KeyError:
             pass
 
         # TODO improve for all caps words
-        if input_word :
-            if input_word[0].isupper():
-                first = newWord[0]
-                rest = newWord[1:]
+        if input_word and input_word[0].isupper():
+            first = new_word[0]
+            rest = new_word[1:]
 
-                newWord = "{0}{1}".format(first.upper(), rest.lower())
+            new_word = "{0}{1}".format(first.upper(), rest.lower())
 
-        return newWord
+        return new_word
 
     # All dictionaries should be stored MtF
 
     # TODO handle this better as we should figure out his/him as replacements for her
-    special = [("him","her"), ("his","her"),("her","his"),("her","him")]
+    special = [("him", "her"), ("his", "her"), ("her", "his"), ("her", "him")]
 
     other = {
         "bro-whore": "sorostitute",
